@@ -1,6 +1,6 @@
 title: Vonge
 
-remote_theme: YassineEng/https://github.com/YassineEng/YassineEng.github.io
+remote_theme: YassineEng/a-github-repo
 
 plugins:
   - jekyll-bookshop
