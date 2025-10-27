@@ -1,5 +1,3 @@
-logo_image: '/images/logo.svg' # You can add own logo. For example '/images/logo.png'.
-
 menu__settings:
   menu__items:
     - title: 'Home'
