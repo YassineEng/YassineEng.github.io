@@ -1,7 +1,7 @@
 {% assign c = "c-project-card" %}
 <article class="{{c}} col col-4 col-d-6 col-t-12">
   <div class="{{c}}__content">
-    <a href="{{ include.project.url }}" class="{{c}}__image">
+    <a href="{{ include.project.github_url }}" class="{{c}}__image">
       <img loading="lazy" src="{{ include.project.image }}" alt="{{ include.project.title }}">
     </a>
     <div class="{{c}}__info">
@@ -12,6 +12,7 @@
         {% if include.project.subtitle %}
         <div class="{{c}}__subtitle">{{ include.project.subtitle }}</div>
         {% endif %}
+        <p class="{{c}}__description">{{ include.project.description }}</p>
       </div>
     </div>
   </div>
