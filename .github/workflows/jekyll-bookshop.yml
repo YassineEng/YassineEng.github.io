@@ -17,7 +17,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.x' # Use a compatible Ruby version
+          ruby-version: '3.2.x' # Use a compatible Ruby version
           bundler-cache: true # Installs dependencies with bundle install
 
       - name: Install Jekyll and Bookshop dependencies
