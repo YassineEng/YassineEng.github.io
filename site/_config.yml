@@ -1,12 +1,9 @@
 title: Vonge
 
-remote_theme: YassineEng/https://github.com/YassineEng/YassineEng.github.io
-
 plugins:
   - jekyll-bookshop
   - jekyll-sitemap
   - jekyll/tagging
-  - jekyll-remote-theme
 
 # Multiple bookshops can be used on one website,
 # or different production / staging locations.

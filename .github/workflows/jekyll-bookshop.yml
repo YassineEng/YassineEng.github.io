@@ -1,0 +1,40 @@
+name: Deploy Jekyll with Bookshop to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Set this to your default branch (e.g., master, main)
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.x' # Use a compatible Ruby version
+          bundler-cache: true # Installs dependencies with bundle install
+
+      - name: Install Jekyll and Bookshop dependencies
+        run: | 
+          cd site
+          bundle install
+
+      - name: Build Jekyll site
+        run: |
+          cd site
+          bundle exec jekyll build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/_site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
