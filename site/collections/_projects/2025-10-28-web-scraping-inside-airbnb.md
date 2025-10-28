@@ -13,7 +13,7 @@ order: 1
   <li>🏗️ Modular Architecture: Clean, maintainable code structure with concerns separated</li>
 </ul>
 
-<div class="code-window">
+<div class="code-window single-code-window">
   <div class="code-header">
     <span class="red"></span>
     <span class="yellow"></span>
