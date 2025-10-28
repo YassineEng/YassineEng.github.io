@@ -162,5 +162,48 @@
   background: transparent; /* Ensure background is transparent to show .code-block background */
 }
 </style>
+<style>
+.code-window {
+  max-width: 850px;
+  margin: 30px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  font-family: 'Fira Code', monospace;
+}
+.code-header {
+  background: #2d2d2d;
+  padding: 8px 12px;
+  display: flex;
+  gap: 8px;
+}
+.code-header span {
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+}
+.red { background:#ff5f56; }
+.yellow { background:#ffbd2e; }
+.green { background:#27c93f; }
+
+.code-body {
+  background-color:#1e1e1e;
+  padding:15px;
+  overflow-x:auto;
+  max-height:500px; /* 👈 scrollable window */
+  color:#dcdcdc;
+  font-size:14px;
+  line-height:1.5;
+}
+
+/* Minimal syntax colors */
+.keyword { color:#569CD6; }
+.string { color:#CE9178; }
+.comment { color:#6A9955; font-style:italic; }
+.function { color:#DCDCAA; }
+.imports { color:#4EC9B0; }
+.number { color:#B5CEA8; }
+</style>
 
 </head>

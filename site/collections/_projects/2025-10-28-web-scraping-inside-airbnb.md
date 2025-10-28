@@ -13,75 +13,73 @@ order: 1
   <li>🏗️ Modular Architecture: Clean, maintainable code structure with concerns separated</li>
 </ul>
 
-<div style="max-width:850px; margin:auto; border-radius:10px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.25);">
-  <div style="background:#2d2d2d; padding:8px 12px; display:flex; gap:8px;">
-    <span style="background:#ff5f56; border-radius:50%; width:12px; height:12px;"></span>
-    <span style="background:#ffbd2e; border-radius:50%; width:12px; height:12px;"></span>
-    <span style="background:#27c93f; border-radius:50%; width:12px; height:12px;"></span>
+<div class="code-window">
+  <div class="code-header">
+    <span class="red"></span>
+    <span class="yellow"></span>
+    <span class="green"></span>
   </div>
-  <div style="background-color:#1e1e1e; padding:15px; overflow-x:auto;">
-    <pre style="margin:0;"><code style="color:#dcdcdc;">
-# main.py
-from modules.web_scraper import fetch_page_content, extract_city_sections
-from modules.file_manager import create_download_folder, get_existing_files_info
-from modules.download_manager import check_for_updates, download_file
-from utils.helpers import extract_country_from_url, show_version_summary
+  <div class="code-body">
+<pre><code>
+<span class="comment"># main.py</span>
+<span class="imports">from</span> modules.web_scraper <span class="imports">import</span> fetch_page_content, extract_city_sections
+<span class="imports">from</span> modules.file_manager <span class="imports">import</span> create_download_folder, get_existing_files_info
+<span class="imports">from</span> modules.download_manager <span class="imports">import</span> check_for_updates, download_file
+<span class="imports">from</span> utils.helpers <span class="imports">import</span> extract_country_from_url, show_version_summary
 
+<span class="keyword">def</span> <span class="function">main</span>():
+    <span class="function">print</span>(<span class="string">"🚀 Starting Airbnb Data Downloader..."</span>)
 
-def main():
-    print("🚀 Starting Airbnb Data Downloader...")
+    <span class="comment"># Interactive folder setup</span>
+    <span class="function">print</span>(<span class="string">"\n📁 Please specify where to save the data:"</span>)
+    download_folder = <span class="function">create_download_folder</span>()
 
-    # Interactive folder setup
-    print("\n📁 Please specify where to save the data:")
-    download_folder = create_download_folder()
+    <span class="comment"># Scrape website</span>
+    <span class="function">print</span>(<span class="string">"\n🌐 Fetching data from Inside Airbnb..."</span>)
+    soup = <span class="function">fetch_page_content</span>()
+    city_sections = <span class="function">extract_city_sections</span>(soup)
+    <span class="keyword">if</span> <span class="function">not</span> city_sections:
+        <span class="function">print</span>(<span class="string">"❌ No city sections found"</span>)
+        <span class="keyword">return</span>
 
-    # Scrape website
-    print("\n🌐 Fetching data from Inside Airbnb...")
-    soup = fetch_page_content()
-    city_sections = extract_city_sections(soup)
-    if not city_sections:
-        print("❌ No city sections found")
-        return
+    <span class="function">print</span>(<span class="string">f"📋 Found {len(city_sections)} city sections on the website"</span>)
 
-    print(f"📋 Found {len(city_sections)} city sections on the website")
+    <span class="comment"># Check existing files</span>
+    existing_files_info = <span class="function">get_existing_files_info</span>(download_folder)
+    <span class="function">print</span>(<span class="string">f"📁 Found {len(existing_files_info)} existing files in folder"</span>)
 
-    # Check existing files
-    existing_files_info = get_existing_files_info(download_folder)
-    print(f"📁 Found {len(existing_files_info)} existing files in folder")
-
-    # Check for updates
-    files_to_download = check_for_updates(
+    <span class="comment"># Check for updates</span>
+    files_to_download = <span class="function">check_for_updates</span>(
         city_sections, existing_files_info, extract_country_from_url
     )
 
-    if not files_to_download:
-        print("✅ All files are up to date - no downloads needed")
-        return
+    <span class="keyword">if</span> <span class="function">not</span> files_to_download:
+        <span class="function">print</span>(<span class="string">"✅ All files are up to date - no downloads needed"</span>)
+        <span class="keyword">return</span>
 
-    print(f"\n📥 Found {len(files_to_download)} files to download/update")
+    <span class="function">print</span>(<span class="string">f"\n📥 Found {len(files_to_download)} files to download/update"</span>)
 
-    # Download files
-    success_count = 0
-    for i, (file_url, city_name, file_type, website_date, reason) in enumerate(files_to_download, 1):
-        try:
-            country = extract_country_from_url(file_url)
-            print(f"[{i}/{len(files_to_download)}] Downloading: {reason}")
-            filename, file_size_mb = download_file(
+    <span class="comment"># Download files</span>
+    success_count = <span class="number">0</span>
+    <span class="keyword">for</span> i, (file_url, city_name, file_type, website_date, reason) <span class="imports">in</span> <span class="function">enumerate</span>(files_to_download, <span class="number">1</span>):
+        <span class="keyword">try</span>:
+            country = <span class="function">extract_country_from_url</span>(file_url)
+            <span class="function">print</span>(<span class="string">f"[{i}/{len(files_to_download)}] Downloading: {reason}"</span>)
+            filename, file_size_mb = <span class="function">download_file</span>(
                 file_url, download_folder, country, city_name, file_type, website_date
             )
-            print(f" ✓ Downloaded: {filename} ({file_size_mb:.2f} MB)")
-            success_count += 1
-        except Exception as e:
-            print(f" ✗ Error: {str(e)}")
+            <span class="function">print</span>(<span class="string">f" ✓ Downloaded: {filename} ({file_size_mb:.2f} MB)"</span>)
+            success_count += <span class="number">1</span>
+        <span class="keyword">except</span> Exception <span class="imports">as</span> e:
+            <span class="function">print</span>(<span class="string">f" ✗ Error: {str(e)}"</span>)
 
-    # Summary
-    print(f"\n✅ Download completed!")
-    print(f"📊 Successfully downloaded: {success_count}/{len(files_to_download)} files")
-    show_version_summary(download_folder)
+    <span class="comment"># Summary</span>
+    <span class="function">print</span>(<span class="string">f"\n✅ Download completed!"</span>)
+    <span class="function">print</span>(<span class="string">f"📊 Successfully downloaded: {success_count}/{len(files_to_download)} files"</span>)
+    <span class="function">show_version_summary</span>(download_folder)
 
-
-if __name__ == "__main__":
-    main()
-  </code></pre>
-</div>
+<span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:
+    <span class="function">main</span>()
+</code></pre>
+  </div>
 </div>
