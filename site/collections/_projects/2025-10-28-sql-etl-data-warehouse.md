@@ -5,7 +5,7 @@ github_url: https://github.com/YassineEng/SQL-ETL-data-warehouse-Inside-Airbnb
 order: 2
 ---
 
-This is an Airbnb Data Warehouse ETL (Extract, Transform, Load) pipeline, designed to process raw Airbnb data (csv.gz) and load it into a SQL Server data warehouse. The pipeline includes modules for analysis, cleaning, validation, and loading, along with robust database management features.
+<p style="margin-left: 20px;">This is an Airbnb Data Warehouse ETL (Extract, Transform, Load) pipeline, designed to process raw Airbnb data (csv.gz) and load it into a SQL Server data warehouse. The pipeline includes modules for analysis, cleaning, validation, and loading, along with robust database management features.</p>
 
 <table>
   <thead>
