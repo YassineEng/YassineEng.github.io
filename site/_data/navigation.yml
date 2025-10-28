@@ -1,6 +1,4 @@
 menu__settings:
   menu__items:
-    - title: 'Home'
+    - title: 'Portfolio'
       url: '/'
-    - title: 'Projects'
-      url: '/projects/'

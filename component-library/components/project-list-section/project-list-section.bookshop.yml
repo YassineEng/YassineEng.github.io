@@ -1,0 +1,17 @@
+# Metadata for the project list section component
+spec:
+  label: Project List Section
+  description: A section to display a list of projects.
+  structures:
+    - content_blocks
+  icon: list
+  tags: ["project", "list"]
+
+# Defines the props that can be passed to the component
+props:
+  title:
+    type: string
+    label: Title
+  description_html:
+    type: html
+    label: Description

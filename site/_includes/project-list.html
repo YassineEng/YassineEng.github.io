@@ -1,0 +1,26 @@
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="contaniner__inner animate">
+          <div class="section__info">
+            <div class="section__head">
+              <h2 class="section__title">Latest Works</h2>
+            </div>
+            <div class="section__description">
+            </div>
+          </div>
+          <div class="projects-list">
+            {% assign sorted_projects = site.projects | sort: "order" %}
+            {% for project in sorted_projects %}
+              <div class="project-item">
+                <h3><a href="{{ project.github_url }}">{{ project.title }}</a></h3>
+                {{ project.content }}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
