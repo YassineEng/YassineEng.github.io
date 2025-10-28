@@ -143,4 +143,58 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // Highlight.js initialization and code block wrapping
+  hljs.highlightAll(); // Use highlightAll() for simplicity
+  wrapCodeBlocks();
 });
+
+function copyCode(button) {
+  const code = button.parentElement.nextElementSibling.innerText;
+  navigator.clipboard.writeText(code);
+  button.innerText = "Copied!";
+  setTimeout(() => (button.innerText = "Copy"), 2000);
+}
+
+// Function to wrap code blocks with custom header and copy button
+function wrapCodeBlocks() {
+  document.querySelectorAll('pre code').forEach((block) => {
+    // Ensure it hasn't been wrapped already
+    if (block.closest('.code-block')) {
+      return;
+    }
+
+    // Create the wrapper div for the custom code block styling
+    const codeBlockWrapper = document.createElement('div');
+    codeBlockWrapper.classList.add('code-block');
+
+    // Create the header div
+    const codeHeader = document.createElement('div');
+    codeHeader.classList.add('code-header');
+
+    // Create the span for the filename/language
+    const fileNameSpan = document.createElement('span');
+    const langMatch = Array.from(block.classList).find(cls => cls.startsWith('language-'));
+    const language = langMatch ? langMatch.replace('language-', '') : 'Code';
+    fileNameSpan.textContent = language.charAt(0).toUpperCase() + language.slice(1);
+
+    // Create the copy button
+    const copyButton = document.createElement('button');
+    copyButton.classList.add('copy-btn');
+    copyButton.textContent = 'Copy';
+    copyButton.setAttribute('onclick', 'copyCode(this)'); // Use the existing copyCode function
+
+    // Append elements to the header
+    codeHeader.appendChild(fileNameSpan);
+    codeHeader.appendChild(copyButton);
+
+    // Get the parent <pre> element
+    const preElement = block.parentNode;
+
+    // Insert the wrapper before the <pre> element
+    preElement.parentNode.insertBefore(codeBlockWrapper, preElement);
+
+    // Move the header and the <pre> into the wrapper
+    codeBlockWrapper.appendChild(codeHeader);
+    codeBlockWrapper.appendChild(preElement);
+  });
+}

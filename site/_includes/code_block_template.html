@@ -1,0 +1,9 @@
+<div class="code-block">
+  <div class="code-header">
+    <span>{{ include.filename }}</span>
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+  </div>
+  {% highlight {{ include.lang }} %}
+{% include_relative ../_includes/_code/{{ include.filename }} %}
+  {% endhighlight %}
+</div>

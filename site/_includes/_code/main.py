@@ -1,32 +1,8 @@
----
-title: Web-scraping-and-dataset-download-Inside-Airbnb
-date: 2025-10-28
-github_url: https://github.com/YassineEng/Web-scraping-and-dataset-download-Inside-Airbnb
-order: 1
----
-
-<p style="margin-left: 20px;">Web Scraping and Data download from Airbnb Inside Website. A comprehensive web scraping project for Airbnb insights website "csv.gz" data collection. This modular Python application automatically checks for data updates and maintains versioned datasets each time you run it.</p>
-<ul style="margin-left: 60px;">
-  <li>🤖 Automated Data Collection: Scrapes Airbnb "csv.gz" data files from InsideAirbnb.com</li>
-  <li>🔍 Smart Update Detection: Compares website dates with local files downloaded previously to download only new data</li>
-  <li>📊 Version Control: Maintains multiple versions of datasets with dates in filenames</li>
-  <li>🏗️ Modular Architecture: Clean, maintainable code structure with concerns separated</li>
-</ul>
-
-<div style="max-width:850px; margin:auto; border-radius:10px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.25);">
-  <div style="background:#2d2d2d; padding:8px 12px; display:flex; gap:8px;">
-    <span style="background:#ff5f56; border-radius:50%; width:12px; height:12px;"></span>
-    <span style="background:#ffbd2e; border-radius:50%; width:12px; height:12px;"></span>
-    <span style="background:#27c93f; border-radius:50%; width:12px; height:12px;"></span>
-  </div>
-  <div style="background-color:#1e1e1e; padding:15px; overflow-x:auto;">
-    <pre style="margin:0;"><code style="color:#dcdcdc;">
 # main.py
 from modules.web_scraper import fetch_page_content, extract_city_sections
 from modules.file_manager import create_download_folder, get_existing_files_info
 from modules.download_manager import check_for_updates, download_file
 from utils.helpers import extract_country_from_url, show_version_summary
-
 
 def main():
     print("🚀 Starting Airbnb Data Downloader...")
@@ -39,6 +15,7 @@ def main():
     print("\n🌐 Fetching data from Inside Airbnb...")
     soup = fetch_page_content()
     city_sections = extract_city_sections(soup)
+
     if not city_sections:
         print("❌ No city sections found")
         return
@@ -50,9 +27,7 @@ def main():
     print(f"📁 Found {len(existing_files_info)} existing files in folder")
 
     # Check for updates
-    files_to_download = check_for_updates(
-        city_sections, existing_files_info, extract_country_from_url
-    )
+    files_to_download = check_for_updates(city_sections, existing_files_info, extract_country_from_url)
 
     if not files_to_download:
         print("✅ All files are up to date - no downloads needed")
@@ -64,10 +39,15 @@ def main():
     success_count = 0
     for i, (file_url, city_name, file_type, website_date, reason) in enumerate(files_to_download, 1):
         try:
-            country = extract_country_from_url(file_url)
+            country = extract_country_from_url(file_url)  # ← This will work now
             print(f"[{i}/{len(files_to_download)}] Downloading: {reason}")
             filename, file_size_mb = download_file(
-                file_url, download_folder, country, city_name, file_type, website_date
+                file_url,
+                download_folder,
+                country,
+                city_name,
+                file_type,
+                website_date
             )
             print(f" ✓ Downloaded: {filename} ({file_size_mb:.2f} MB)")
             success_count += 1
@@ -79,9 +59,5 @@ def main():
     print(f"📊 Successfully downloaded: {success_count}/{len(files_to_download)} files")
     show_version_summary(download_folder)
 
-
 if __name__ == "__main__":
     main()
-  </code></pre>
-</div>
-</div>
