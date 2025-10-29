@@ -2,8 +2,16 @@
 title: I.    Web-scraping-and-dataset-download-Inside-Airbnb
 date: 2025-10-28
 github_url: https://github.com/YassineEng/Web-scraping-and-dataset-download-Inside-Airbnb
-order: 1
 ---
+
+<!-- Badges (must be outside YAML front matter) -->
+<div style="margin-left: 20px;">
+  <img src="https://img.shields.io/badge/Python-3.x-blue?logo=python">
+  <img src="https://img.shields.io/badge/BeautifulSoup-HTML%20Parser-green?logo=html5">
+  <img src="https://img.shields.io/badge/Requests-HTTP%20Client-blue">
+  <img src="https://img.shields.io/badge/UV-Package%20Manager-purple">
+</div>
+
 
 <p style="margin-left: 20px;">Web Scraping and Data download from Airbnb Inside Website. A comprehensive web scraping project for Airbnb insights website "csv.gz" data collection. This modular Python application automatically checks for data updates and maintains versioned datasets each time you run it.</p>
 <ul style="margin-left: 60px;">

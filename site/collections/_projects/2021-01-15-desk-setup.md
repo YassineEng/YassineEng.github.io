@@ -5,6 +5,14 @@ github_url: https://github.com/YassineEng/FastAPI-Accommodation-Advisor-Airbnb-v
 order: 4
 ---
 
+<!-- Badges (must be outside YAML front matter) -->
+<div style="margin-left: 20px;">
+  <img src="https://img.shields.io/badge/Python-3.10+-blue?logo=python">
+  <img src="https://img.shields.io/badge/FastAPI-API-009688?logo=fastapi">
+  <img src="https://img.shields.io/badge/OpenStreetMap-Map%20Data-green?logo=openstreetmap">
+  <img src="https://img.shields.io/badge/GeoPy-Library-green">
+</div>
+
 <p style="margin-left: 20px;"><strong>Accommodation Advisor</strong> helps users <strong>compare nearby Airbnbs and hotels</strong> using geospatial distance.<br>Built with <strong>FastAPI</strong>, it offers high-speed performance and auto-generated documentation via Swagger UI.</p>
 
 <ul style="margin-left: 60px;">

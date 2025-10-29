@@ -4,6 +4,19 @@ date: 2023-10-27
 github_url: https://github.com/YassineEng/RAG-Using-Airbnb-reviews-to-augment-touristic-recommendation-huggingface
 order: 3
 ---
+
+<!-- Badges (must be outside YAML front matter) -->
+<div style="margin-left: 20px;">
+  <img src="https://img.shields.io/badge/Python-3.x-blue?logo=python">
+  <img src="https://img.shields.io/badge/LangChain-Framework-green?logo=langchain">
+  <img src="https://img.shields.io/badge/FAISS-Vector%20Search-red">
+  <img src="https://img.shields.io/badge/Sentence%20Transformers-Embeddings-blueviolet">
+  <img src="https://img.shields.io/badge/Hugging%20Face-Transformers-yellow?logo=huggingface">
+  <img src="https://img.shields.io/badge/PyTorch-Deep%20Learning-EE4C2C?logo=pytorch">
+</div>
+
+
+
 <p style="margin-left: 20px;">This project leverages a Retrieval-Augmented Generation (RAG) model to provide touristic recommendations based on a large dataset of Airbnb reviews. By analyzing real guest experiences, the system can answer user queries about cities, neighborhoods, and specific listings, offering nuanced insights that go beyond simple ratings.</p>
 
 <div class="code-window-container">
