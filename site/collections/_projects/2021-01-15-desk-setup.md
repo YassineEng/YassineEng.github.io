@@ -4,6 +4,15 @@ title: IV.    FastAPI-Accommodation-Advisor-Airbnb-vs-Hotel
 github_url: https://github.com/YassineEng/FastAPI-Accommodation-Advisor-Airbnb-vs-Hotel
 order: 4
 ---
-<p style="margin-left: 20px;">A FastAPI-based web service that helps users find the best accommodation options by comparing Airbnb listings and hotels.</p>
+<p style="margin-left: 20px;"><strong>Accommodation Advisor</strong> helps users <strong>compare nearby Airbnbs and hotels</strong> using geospatial distance.<br>Built with <strong>FastAPI</strong>, it offers high-speed performance and auto-generated documentation via Swagger UI.</p>
+<ul style="margin-left: 60px;">
+<li>🔍 <strong>Find Airbnbs near a hotel</strong> — Search for top Airbnb listings within a radius of a given hotel.</li>
+<li>🏠 <strong>Find hotels near an Airbnb</strong> — Given an Airbnb listing URL, discover nearby hotels.</li>
+</ul>
 
-<img class="project-gif" src="/images/fastapi-accommodation-advisor.gif" alt="FastAPI Accommodation Advisor GIF" width="1118" height="822">
+<div style="text-align: center;">
+    <video controls width="75%">
+        <source src="/images/fastapi-demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
