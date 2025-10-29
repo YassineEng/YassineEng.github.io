@@ -11,8 +11,8 @@ order: 4
 </ul>
 
 <div style="text-align: center;">
-    <video controls width="600">
-        <source src="{{ '/images/fastapi-demo.mp4' | relative_url }}" type="video/mp4">
+    <video width="600" autoplay loop muted playsinline controls>
+        <source src="{{ '/site/images/fastapi-demo.mp4' | relative_url }}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 </div>
