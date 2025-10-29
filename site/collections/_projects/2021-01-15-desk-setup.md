@@ -12,7 +12,6 @@ order: 4
 
 <div style="text-align: center;">
     <video width="600" autoplay loop muted playsinline>
-        <source src="{{ '/site/images/fastapi-demo-web.mp4' | relative_url }}" type="video/mp4">
-        Your browser does not support the video tag.
+        <source src="https://yassineeng.github.io/site/images/fastapi-demo-web.mp4" type="video/mp4">
     </video>
 </div>
