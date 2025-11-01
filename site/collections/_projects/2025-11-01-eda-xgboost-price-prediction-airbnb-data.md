@@ -24,26 +24,17 @@ order: 5
 </ul>
 
   <!-- Binder Launch Button -->
-  <a href="https://mybinder.org/v2/gh/YassineEng/EDA-XGBoost--price-predection-Airbnb-Data/main?filepath=notebooks/02_price_pred.ipynb" target="_blank" style="display:inline-block; margin: 15px 0;">
+  <a href="https://mybinder.org/v2/gh/YassineEng/EDA-XGBoost--price-predection-Airbnb-Data/main?filepath=notebooks/02_price_pred.ipynb" target="_blank" style="display:inline-block; margin: 15px 0; margin-left: 20px;">
     <img src="https://mybinder.org/badge_logo.svg" alt="Launch Binder" style="height: 20px;">
   </a>
 
+<div style="text-align: center;">
   <!-- Static Notebook Preview -->
-  <div class="code-window-container">
-    <div class="code-window">
-      <div class="code-header">
-        <span class="red"></span>
-        <span class="yellow"></span>
-        <span class="green"></span>
-      </div>
-      <div class="code-body">
-        <iframe
-          src="https://nbviewer.org/github/YassineEng/EDA-XGBoost--price-predection-Airbnb-Data/blob/main/notebooks/02_price_pred.ipynb"
-          width="100%"
-          height="800"
-          frameborder="0"
-          style="border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); margin-top: 20px;">
-        </iframe>
-      </div>
-    </div>
-  </div>
+  <iframe
+    src="https://nbviewer.org/github/YassineEng/EDA-XGBoost--price-predection-Airbnb-Data/blob/main/notebooks/02_price_pred.ipynb"
+    width="100%"
+    height="800"
+    frameborder="0"
+    style="border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); margin-top: 20px;">
+  </iframe>
+</div>
