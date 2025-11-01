@@ -19,3 +19,28 @@ order: 5
   <li>📊 Exploratory Data Analysis (EDA): The 01_EDA.ipynb notebook performs a thorough exploratory data analysis of the dataset. This includes visualizing data distributions, identifying correlations, and gaining insights into the factors that influence Airbnb prices.</li>
   <li>📈 Price Prediction Modeling: The 02_price_pred.ipynb notebook builds a regression model to predict Airbnb listing prices. This involves feature selection, model training, and evaluation.</li>
 </ul>
+
+  <!-- Binder Launch Button -->
+  <a href="https://mybinder.org/v2/gh/YassineEng/EDA-XGBoost--price-predection-Airbnb-Data/main?filepath=notebooks/02_price_pred.ipynb" target="_blank" style="display:inline-block; margin: 15px 0;">
+    <img src="https://mybinder.org/badge_logo.svg" alt="Launch Binder" style="height: 20px;">
+  </a>
+
+  <!-- Static Notebook Preview -->
+  <div class="code-window-container">
+    <div class="code-window">
+      <div class="code-header">
+        <span class="red"></span>
+        <span class="yellow"></span>
+        <span class="green"></span>
+      </div>
+      <div class="code-body">
+        <iframe
+          src="https://nbviewer.org/github/YassineEng/EDA-XGBoost--price-predection-Airbnb-Data/blob/main/notebooks/02_price_pred.ipynb"
+          width="100%"
+          height="800"
+          frameborder="0"
+          style="border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); margin-top: 20px;">
+        </iframe>
+      </div>
+    </div>
+  </div>
