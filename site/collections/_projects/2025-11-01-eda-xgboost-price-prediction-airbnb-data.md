@@ -10,6 +10,9 @@ order: 5
   <img src="https://img.shields.io/badge/Python-3.x-blue?logo=python">
   <img src="https://img.shields.io/badge/Pandas-Library-150458?logo=pandas">
   <img src="https://img.shields.io/badge/XGBoost-Model-820000?logo=xgboost">
+  <img src="https://img.shields.io/badge/Matplotlib-Library-blue?logo=matplotlib">
+  <img src="https://img.shields.io/badge/Seaborn-Library-blue?logo=seaborn">
+  <img src="https://img.shields.io/badge/Scikit--learn-ML-orange?logo=scikit-learn">
 </div>
 
 <p style="margin-left: 20px;">The project is structured as a data pipeline that processes raw Airbnb data into a format suitable for analysis and modeling. The pipeline consists of the following steps:</p>
