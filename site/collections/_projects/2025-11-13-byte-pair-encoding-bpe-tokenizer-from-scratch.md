@@ -25,7 +25,7 @@ order: 9
 -->
 
 <div style="overflow: auto; height: 400px; background-color: #f6f8fa; padding: 15px; border-radius: 5px; margin-top: 20px;">
-<pre>
+<pre>{% raw %}
 # Byte Pair Encoding (BPE) Tokenizer from Scratch
 
 This project is an educational journey to build a Unicode character property database and a Byte Pair Encoding (BPE) tokenizer from first principles in Python. It aims to replicate core functionalities found in Python's `unicodedata` module and modern BPE tokenization libraries, providing a deep understanding of Unicode handling and text processing. To enhance performance in critical sections, a Rust-based parser is integrated using `PyO3`. A Rust free version is available on the second branch of the repo.
@@ -321,5 +321,5 @@ Total merges learned: 200
 ================================================================================
 ALL STEPS AND DEMONSTRATIONS COMPLETED! Total time: 0.36 seconds.
 ================================================================================
-</pre>
+{% endraw %}</pre>
 </div>
